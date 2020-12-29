@@ -7,6 +7,7 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
         setInputText(e.target.value);
     };
     const submitTodoHandler = (e) => {
+        console.log('purr');
         e.preventDefault();
         setTodos([
             ...todos,
@@ -19,7 +20,12 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
     }
     return (
         <form>
-            <input onChange={inputTextHadler} type="text" className="todo-input" />
+            <input
+                value={inputText}
+                onChange={inputTextHadler}
+                type="text"
+                className="todo-input"
+            />
             <button onClick={submitTodoHandler} className="todo-button" type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
